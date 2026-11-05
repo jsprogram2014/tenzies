@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: #0b2434;
+  font-family: Karla, sans-serif;
+  min-height: 100vh;
+}
