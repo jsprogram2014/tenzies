@@ -1,6 +1,7 @@
 import Die from "./Die";
 import "../styles/main-section.css";
 import React from "react";
+import Confetti from "react-confetti";
 export default function App() {
   const dieArray = generateDiceArray();
 
@@ -73,6 +74,7 @@ export default function App() {
       <>
         {handleConfetti() && (
           <div className="win-banner">
+            <Confetti />
             <span className="win-emoji">🎉</span>
             <h2 className="win-title">TENZIES!</h2>
             <p className="win-text">Congratulations, you won!</p>
