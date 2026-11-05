@@ -57,24 +57,15 @@ export default function App() {
     if (allValue & allHeld) {
       return true;
     } else return false;
-
-    // let firstValue = diceArray[0].value;
-    // let firstheld = diceArray[0].isHeld;
-
-    // let backupValue = firstValue;
-    // for (let i = 1; i < diceArray.length; i++) {
-    //   if (diceArray[i].value != firstValue) {
-    //     firstValue = diceArray[i].value;
-    //     break;
-    //   }
-    // }
-    // if (firstValue != backupValue) {
-    //   return false;
-    // } else return true;
   }
 
   return (
     <main>
+      <h1 className="title">Tenzies</h1>
+      <p className="instructions">
+        Roll until all dice are the same. Click each die to freeze it at its
+        current value between rolls.
+      </p>
       <div className="dice-container">{diceArrayHtml}</div>
       <button className="roll-btn" onClick={handleRoll}>
         Roll a Dice
