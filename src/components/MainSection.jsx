@@ -64,6 +64,15 @@ export default function App() {
     setDiceArray(diceArrayObj);
   }
 
+  const refElement = React.useRef(null);
+
+  React.useEffect(() => {
+    // console.log(handleConfetti());
+    if (handleConfetti()) {
+      refElement.current.focus();
+    }
+  }, [handleConfetti()]);
+
   return (
     <main>
       <h1 className="title">Tenzies</h1>
@@ -74,7 +83,7 @@ export default function App() {
       <div className="dice-container">{diceArrayHtml}</div>
       <>
         {handleConfetti() ? (
-          <button className="roll-btn" onClick={handleNew}>
+          <button className="roll-btn" onClick={handleNew} ref={refElement}>
             New Game
           </button>
         ) : (
