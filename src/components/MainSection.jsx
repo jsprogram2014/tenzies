@@ -60,6 +60,10 @@ export default function App() {
     } else return false;
   }
 
+  function handleNew() {
+    setDiceArray(diceArrayObj);
+  }
+
   return (
     <main>
       <h1 className="title">Tenzies</h1>
@@ -68,9 +72,17 @@ export default function App() {
         current value between rolls.
       </p>
       <div className="dice-container">{diceArrayHtml}</div>
-      <button className="roll-btn" onClick={handleRoll}>
-        Roll a Dice
-      </button>
+      <>
+        {handleConfetti() ? (
+          <button className="roll-btn" onClick={handleNew}>
+            New Game
+          </button>
+        ) : (
+          <button className="roll-btn" onClick={handleRoll}>
+            Roll a Dice
+          </button>
+        )}
+      </>
       <>
         {handleConfetti() && (
           <div className="win-banner">
